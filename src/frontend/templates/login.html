@@ -1,0 +1,286 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #3498db, #8e44ad);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            transition: 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            background-color: #fff;
+            border: 2px solid #3498db;
+        }
+
+        button {
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        button:active {
+            background-color: #1abc9c;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-group a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .form-group a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form method="POST" action="/login">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>or</p>
+        <form method="POST" action="/signup">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="form-group">
+            <a href="#">Forgot password?</a>
+        </div>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #3498db, #8e44ad);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            transition: 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            background-color: #fff;
+            border: 2px solid #3498db;
+        }
+
+        button {
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        button:active {
+            background-color: #1abc9c;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-group a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .form-group a:hover {
+            text-decoration: underline;
+        }
+
+        #password-strength {
+            font-size: 0.9rem;
+            margin: -5px 0 10px;
+            text-align: left;
+        }
+
+        .weak {
+            color: red;
+        }
+
+        .medium {
+            color: orange;
+        }
+
+        .strong {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form method="POST" action="/login">
+            <input id="login-username" type="text" name="username" placeholder="Username" required>
+            <p id="username-error" style="color: red; font-size: 0.9rem; display: none;">Username must contain only letters and at least one capital letter.</p>
+            <input id="login-password" type="password" name="password" placeholder="Password" required>
+            <p id="password-strength" class="weak">Password strength: Weak</p>
+            <button type="submit">Login</button>
+        </form>
+        <p>or</p>
+        <form method="POST" action="/signup">
+            <input id="signup-username" type="text" name="username" placeholder="Username" required>
+            <p id="signup-username-error" style="color: red; font-size: 0.9rem; display: none;">Username must contain only letters and at least one capital letter.</p>
+            <input id="signup-password" type="password" name="password" placeholder="Password" required>
+            <p id="signup-password-strength" class="weak">Password strength: Weak</p>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="form-group">
+            <a href="#">Forgot password?</a>
+        </div>
+    </div>
+
+    <script>
+        function validateUsername(inputId, errorId) {
+            const username = document.getElementById(inputId).value;
+            const error = document.getElementById(errorId);
+            const usernameRegex = /^[A-Za-z]*$/; // Only letters
+            const hasCapital = /[A-Z]/; // At least one capital letter
+
+            if (!usernameRegex.test(username) || !hasCapital.test(username)) {
+                error.style.display = "block";
+            } else {
+                error.style.display = "none";
+            }
+        }
+
+        function checkPasswordStrength(inputId, strengthId) {
+            const password = document.getElementById(inputId).value;
+            const strengthText = document.getElementById(strengthId);
+
+            if (password.length < 6) {
+                strengthText.textContent = "Password strength: Weak";
+                strengthText.className = "weak";
+            } else if (password.match(/[A-Za-z]/) && password.match(/[0-9]/) && password.length >= 8) {
+                strengthText.textContent = "Password strength: Strong";
+                strengthText.className = "strong";
+            } else {
+                strengthText.textContent = "Password strength: Medium";
+                strengthText.className = "medium";
+            }
+        }
+
+        document.getElementById("login-username").addEventListener("input", () => validateUsername("login-username", "username-error"));
+        document.getElementById("login-password").addEventListener("input", () => checkPasswordStrength("login-password", "password-strength"));
+        document.getElementById("signup-username").addEventListener("input", () => validateUsername("signup-username", "signup-username-error"));
+        document.getElementById("signup-password").addEventListener("input", () => checkPasswordStrength("signup-password", "signup-password-strength"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+venv.bak/
+env.bak/
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+*.code-workspace
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Machine Learning Models (too large for version control)
+*.h5
+*.keras
+*.pkl
+*.pickle
+*.pth
+*.pt
+*.onnx
+*.pb
+*.joblib
+
+# Large Data Files
+data/
+splitted_data/
+*.csv
+*.xlsx
+*.xls
+
+# Flask
+instance/
+.webassets-cache
+
+# MongoDB
+mongod.log
+*.log
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary Files
+*.tmp
+*.temp
+*.bak
+~*
+.#*
+
+# Compiled Python files
+*.pyc
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache
+.cache/
+*.cache
+
+# Node (if using npm for frontend)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Uploads (image uploads folder)
+src/frontend/static/images/uploads/
+src/frontend/static/images/*.png
+src/frontend/static/images/*.jpg
+src/frontend/static/images/*.jpeg
+src/frontend/static/images/*.gif
+src/frontend/static/images/*.webp
+
+# Configuration files with sensitive data
+config.py
+local_config.py
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Documentation
+site/
+docs/_build/
+
+# Test reports
+test-results/
+test_reports/

@@ -1117,4 +1117,4 @@ For full license text, see LICENSE file in repository.
 
 ---
 
-*Made with ❤️ by the Recipe Recognition Team*
+
